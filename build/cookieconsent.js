@@ -2709,7 +2709,11 @@ function () {
         href: window.CookieConsent.config.modalMainTextMoreLink,
         target: '_blank',
         rel: 'noopener noreferrer'
-      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null), (0, _redom.el)('div.ccm__cheading__close', '×')), (0, _redom.el)('div.ccm__content__body', (0, _redom.el)('div.ccm__tabs', modalTabGroups())), (0, _redom.el)('div.ccm__footer', (0, _redom.el)('button#ccm__footer__consent-modal-submit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnSave')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnAcceptAll')))));
+      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null), (0, _redom.el)('div.ccm__modalMainCookiePolicyLink', window.CookieConsent.config.modalMainCookiePolicyLink ? (0, _redom.el)('a', {
+        href: window.CookieConsent.config.modalMainCookiePolicyLink,
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalCookiePolicyLinkText')) : null), (0, _redom.el)('div.ccm__cheading__close', '×')), (0, _redom.el)('div.ccm__content__body', (0, _redom.el)('div.ccm__tabs', modalTabGroups())), (0, _redom.el)('div.ccm__footer', (0, _redom.el)('button#ccm__footer__consent-modal-submit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnSave')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnAcceptAll')))));
     }
   }, {
     key: "modalRedrawIcons",
@@ -3038,7 +3042,8 @@ function () {
       active: true,
       cookieExists: false,
       cookieVersion: 1,
-      modalMainTextMoreLink: null,
+      modalMainTextMoreLink: 'http://www.google.com',
+      modalMainCookiePolicyLink: null,
       barTimeout: 1000,
       theme: {
         barColor: '#2C7CBF',
@@ -3049,33 +3054,35 @@ function () {
         modalMainButtonTextColor: '#FFF'
       },
       language: {
-        current: 'en',
+        current: 'es',
         locale: {
+          es: {
+            barMainText: 'Usamos cookies y otras técnicas de rastreo para mejorar tu experiencia de navegación en nuestra web, para mostrarte contenidos personalizados y anuncios adecuados, para analizar el tráfico en nuestra web y para comprender de dónde llegan nuestros visitantes.',
+            barLinkSetting: 'Configurar Cookies',
+            barBtnAcceptAll: 'Aceptar todas las Cookies',
+            modalMainTitle: 'Configuracion de cookies',
+            modalMainText: 'Las cookies son un pequeño conjunto de datos enviados desde un sitio web y almacenados en el ordenador del usuario por el navegador web del usuario mientras el usuario está navegando. Su navegador almacena cada mensaje en un pequeño archivo, llamado cookie. Cuando solicita otra página del servidor, su navegador envía la cookie de vuelta al servidor. Las cookies fueron diseñadas para ser un mecanismo confiable para que los sitios web recuerden información o registren la actividad de navegación del usuario.',
+            modalCookiePolicyLinkText: 'Política de cookies',
+            modalBtnSave: 'Guardar configuración Actual',
+            modalBtnAcceptAll: 'Aceptar todas las Cookies y cerrar',
+            modalAffectedSolutions: 'Servicios Afectados:',
+            learnMore: 'Saber mas',
+            on: 'On',
+            off: 'Off'
+          },
           en: {
-            barMainText: 'This website uses cookies to ensure you get the best experience on our website.',
+            barMainText: 'We use cookies and other tracking techniques to improve your browsing experience on our website, to show you personalized content and appropriate advertisements, to analyze traffic on our website and to understand where our visitors come from.',
             barLinkSetting: 'Cookie Settings',
             barBtnAcceptAll: 'Accept all cookies',
             modalMainTitle: 'Cookie settings',
             modalMainText: 'Cookies are small piece of data sent from a website and stored on the user\'s computer by the user\'s web browser while the user is browsing. Your browser stores each message in a small file, called cookie. When you request another page from the server, your browser sends the cookie back to the server. Cookies were designed to be a reliable mechanism for websites to remember information or to record the user\'s browsing activity.',
+            modalCookiePolicyLinkText: 'Cookie\'s Policy',
             modalBtnSave: 'Save current settings',
             modalBtnAcceptAll: 'Accept all cookies and close',
             modalAffectedSolutions: 'Affected solutions:',
             learnMore: 'Learn More',
             on: 'On',
             off: 'Off'
-          },
-          hu: {
-            barMainText: 'Ez a weboldal Sütiket használ a jobb felhasználói élmény érdekében.',
-            barLinkSetting: 'Süti beállítások',
-            barBtnAcceptAll: 'Minden süti elfogadása',
-            modalMainTitle: 'Süti beállítások',
-            modalMainText: 'A HTTP-süti (általában egyszerűen süti, illetve angolul cookie) egy információcsomag, amelyet a szerver küld a webböngészőnek, majd a böngésző visszaküld a szervernek minden, a szerver felé irányított kérés alkalmával. Amikor egy weboldalt kérünk le a szervertől, akkor a böngésző elküldi a számára elérhető sütiket. A süti-ket úgy tervezték, hogy megbízható mechanizmust biztosítsanak a webhelyek számára az információk megőrzésére vagy a felhasználók böngészési tevékenységének rögzítésére.',
-            modalBtnSave: 'Beállítások mentése',
-            modalBtnAcceptAll: 'Minden Süti elfogadása',
-            modalAffectedSolutions: 'Mire lesz ez hatással:',
-            learnMore: 'Tudj meg többet',
-            on: 'Be',
-            off: 'Ki'
           }
         }
       },

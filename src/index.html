@@ -9,6 +9,16 @@
   <script src="./index.js"></script>
   <script>
   window.CookieConsent.init({
+    modalMainTextMoreLink: 'http://www.google.com',
+    modalMainCookiePolicyLink: 'http://www.google.com',
+    theme: {
+      barColor: '#2C7CBF',
+      barTextColor: '#FFF',
+      barMainButtonColor: '#FFF',
+      barMainButtonTextColor: '#2C7CBF',
+      modalMainButtonColor: '#4285F4',
+      modalMainButtonTextColor: '#FFF',
+    },
     language: {
       current: 'es'
     },
@@ -19,30 +29,42 @@
         checked: true,
         language: {
           locale: {
+            es: {
+              name: 'Cookies estríctamente necesarias',
+              description: 'Estos cookies son esenciales para proveerte los servicios disponibles en nuestra web y para permitirte utilizar algunas características de nuestra web.' +
+                      '\n' +
+                      'Sin estas cookies, no podemos proveer algunos servicios de nuestro sitio web.',
+            },
             en: {
               name: 'Strictly Necessary Cookies',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu commodo est, nec gravida odio. Suspendisse scelerisque a ex nec semper.',
-            },
-            es: {
-              name: 'Estríctamente necesarias',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu commodo est, nec gravida odio. Suspendisse scelerisque a ex nec semper.',
+              description: 'These cookies are essential to provide you with the services available on our website and to allow you to use some features of our website.  ' +
+                      '\n' +
+                      'Without these cookies, we cannot provide some services of our website.',
             }
           }
         }
       },
-      various: {
+      tracking: {
         needed: false,
         wanted: false,
-        checked: false,
+        checked: true,
         language: {
           locale: {
-            en: {
-              name: 'Other',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            },
             es: {
-              name: 'Otras',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu commodo est, nec gravida odio. Suspendisse scelerisque a ex nec semper.',
+              name: 'Cookies de rastreo y rendimiento',
+              description: 'Estas cookies son utilizadas para recopilar información, para analizar el tráfico y la forma en que los usuarios utilizan nuestra web.' +
+                      '\n' +
+                      'Por ejemplo, estas cookies pueden recopilar datos como cuánto tiempo llevas navegado en nuestro sitio web o qué páginas visitas, cosa que nos ayuda a comprender cómo podemos mejorar nuestra web para ti.\n' +
+                      '\n' +
+                      'La información recopilada con estas cookies de rastreo y rendimiento no identifican a ningún visitante individual.',
+            },
+            en: {
+              name: 'Tracking cookies',
+              description: 'These cookies are used to collect information to analyze the traffic to our website and how visitors are using our website.\n' +
+                      '\n' +
+                      'For example, these cookies may track things such as how long you spend on the website or the pages you visit which helps us to understand how we can improve our website site for you.\n' +
+                      '\n' +
+                      'The information collected through these tracking and performance cookies do not identify any individual visitor.',
             }
           }
         }
@@ -50,61 +72,31 @@
     },
     services: {
       facebook: {
-        category: 'various',
+        category: 'tracking',
         type: 'dynamic-script',
         search: 'facebook',
         language: {
           locale: {
-            en: {
+            es: {
               name: 'Facebook'
             },
-            hu: {
+            en: {
               name: 'Facebook'
             }
           }
         }
       },
-      azalead: {
-        category: 'various',
+      otro: {
+        category: 'tracking',
         type: 'script-tag',
-        search: 'azalead',
+        search: 'Google-Analytics',
         language: {
           locale: {
-            en: {
-              name: 'Azalead'
+            es: {
+              name: 'Google Analytics'
             },
-            hu: {
-              name: 'Azalead'
-            }
-          }
-        }
-      },
-      wrapped: {
-        category: 'various',
-        type: 'wrapped',
-        search: 'wrappedfiltro',
-        language: {
-          locale: {
             en: {
-              name: 'Wrapped'
-            },
-            hu: {
-              name: 'Csomagolt süti'
-            }
-          }
-        }
-      },
-      localcookie: {
-        category: 'various',
-        type: 'localcookie',
-        search: 'localcookie',
-        language: {
-          locale: {
-            en: {
-              name: 'Local cookie'
-            },
-            hu: {
-              name: 'Helyi süti'
+              name: 'Google Analytics'
             }
           }
         }
@@ -114,9 +106,9 @@
   </script>
 </head>
 <body>
-  <button class="ccb__edit">Consent edit</button>
+  <a class="ccb__edit" href="#">Consent edit</a>
   <!-- Facebook Pixel Code -->
-  <script>
+  <script type="text/plain" data-consent="Google-Analytics">
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -128,9 +120,10 @@
     fbq('init', '1255791531218038');
     fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1255791531218038&ev=PageView&noscript=1"
-  /></noscript>
+
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1255791531218038&ev=PageView&noscript=1"/>
+  </noscript>
   <!-- End Facebook Pixel Code -->
 
   <!-- Azalead tracking code -->

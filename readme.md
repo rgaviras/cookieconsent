@@ -33,6 +33,17 @@ Some services are not inserted in a SCRIPT tag and are obscured by layers of oth
 
 Finally the local cookies set on your domain can be also filtered by overriding the bowsers COOKIE SET method.
 
+### Review
+If you look at the code you will see:
+
+1.- dynamic-script: is overriding Element.prototype.insertBefore and Element.prototype.appendChild for SCRIPT tags, so that scripts inserted dynamically in DOM pass through your desired filter
+
+2.- script-tag: works with ~~~~`...<script type="text/plain" data-consent="some-name"> ... `and toggles from type="text/plain" to type="script/javascript" depending on your filter
+
+3.- localcookie: is overriding document.cookie (similar to dynamic-script) and blocks cookies being set if your filter don't allow it
+
+4.- wrapped: is a function you can write that will be called for each blacklisted item, so that you can manually remove some stuff you don't want
+
 ## Usage
 
 1. Download the file cookieconsent.zip from the [latest release](https://github.com/brainsum/cookieconsent/releases/latest), and unpack its content.
