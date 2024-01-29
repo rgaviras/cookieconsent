@@ -175,6 +175,9 @@ export default class Interface {
             Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalMainText'),
             (window.CookieConsent.config.modalMainTextMoreLink) ? el('a', { href: window.CookieConsent.config.modalMainTextMoreLink, target: '_blank', rel: 'noopener noreferrer' }, Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null
           ),
+          el('div.ccm__modalMainCookiePolicyLink',
+              (window.CookieConsent.config.modalMainCookiePolicyLink) ? el('a', { href: window.CookieConsent.config.modalMainCookiePolicyLink, target: '_blank', rel: 'noopener noreferrer' }, Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalCookiePolicyLinkText')) : null
+          ),
           el('button.ccm__cheading__close', '×', { 'aria-label': Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'closeAriaLabel') })
         ),
         el('div.ccm__content__body',
